@@ -7,10 +7,10 @@ import {
 } from 'react-native';
 
 //make component
-const Header = () => {
+const Header = (props) => {
     return (
         <View style = {styles.viewStyle}>
-            <Text style = {styles.textStyle}>Albums</Text>
+            <Text style = {styles.textStyle}>{props.headerText}</Text>
         </View>
     );
 };
@@ -21,7 +21,12 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     viewStyle: {
-        backgroundColor: 'orange'
+        backgroundColor: 'orange',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 60,
+        elevation: 2,
+        position: 'relative'
     }
 });
 

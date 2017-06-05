@@ -2,13 +2,16 @@
 import React from 'react';
 import {
     Text,
-    StyleSheet
+    StyleSheet,
+    View
 } from 'react-native';
 
 //make component
 const Header = () => {
     return (
-        <Text style={styles.textStyle}>Albums</Text>
+        <View style = {styles.viewStyle}>
+            <Text style = {styles.textStyle}>Albums</Text>
+        </View>
     );
 };
 
@@ -17,6 +20,9 @@ const styles = StyleSheet.create({
     textStyle: {
         fontSize: 20
     },
+    viewStyle: {
+        backgroundColor: 'orange'
+    }
 });
 
 //make component available to other parts of the application

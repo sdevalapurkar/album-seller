@@ -9,8 +9,8 @@ import {
 //make component
 const Header = (props) => {
     return (
-        <View style = {styles.viewStyle}>
-            <Text style = {styles.textStyle}>{props.headerText}</Text>
+        <View style={styles.viewStyle}>
+            <Text style={styles.textStyle}>{props.headerText}</Text>
         </View>
     );
 };

@@ -12,16 +12,22 @@ const AlbumDetail = (props) => {
     return (
         <Card>
             <CardSection>
-                <View> 
+                <View style={styles.viewImageThumbnail}> 
                     <Image 
                         style={styles.thumbnailImage} 
                         source={{ uri: props.album.thumbnail_image }} 
                     />
                 </View>
                 <View style={styles.headerContent}>    
-                    <Text>{props.album.title}</Text>
+                    <Text style={styles.headerText}>{props.album.title}</Text>
                     <Text>{props.album.artist}</Text>
                 </View>    
+            </CardSection>    
+            <CardSection>
+                <Image 
+                    source={{ uri: props.album.image }}
+                    style={styles.imageAlbumArt}
+                />
             </CardSection>    
         </Card>        
     );
@@ -32,9 +38,23 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-around'
     },
+    headerText: {
+        fontSize: 18
+    },
     thumbnailImage: {
         height: 50,
         width: 50
+    },
+    viewImageThumbnail: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 10,
+        marginRight: 10
+    },
+    imageAlbumArt: {
+        height: 300,
+        flex: 1,
+        width: null
     }
 });
 

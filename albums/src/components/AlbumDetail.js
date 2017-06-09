@@ -3,10 +3,12 @@ import {
     Text,
     View,
     StyleSheet,
-    Image
+    Image,
+    Linking
 } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 const AlbumDetail = (props) => {
     return (
@@ -22,13 +24,24 @@ const AlbumDetail = (props) => {
                     <Text style={styles.headerText}>{props.album.title}</Text>
                     <Text>{props.album.artist}</Text>
                 </View>    
-            </CardSection>    
+            </CardSection>   
+
             <CardSection>
                 <Image 
                     source={{ uri: props.album.image }}
                     style={styles.imageAlbumArt}
                 />
-            </CardSection>    
+            </CardSection>   
+
+            <CardSection>
+                <Button 
+                onPress={() => {
+                    Linking.openURL(props.album.url);
+                }}
+                >
+                Buy Now
+                </Button>
+            </CardSection>     
         </Card>        
     );
 };
